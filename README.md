@@ -58,34 +58,16 @@ go mod tidy
 
 ### Starting the Server
 
-To start the WebSocket server:
+run the server:
 
-```bash
-go run cmd/broadcast/main.go start [options]
-
-Options:
-  -port string    Port to listen on (default "8080")
-  -host string    Host to bind to (default "0.0.0.0")
-```
-
-Example:
 ```bash
 go run cmd/broadcast/main.go start -port 8080
 ```
 
 ### Connecting as a Client
 
-To connect to the server as a client:
+in a separate terminal, connect with a client (you can connect multiple clients in multiple separate terminals):
 
-```bash
-go run cmd/broadcast/main.go connect [options]
-
-Options:
-  -addr string      Server address (default "localhost:8080")
-  -username string  Username for chat (optional)
-```
-
-Example:
 ```bash
 go run cmd/broadcast/main.go connect -addr localhost:8080 -username Alice
 ```
