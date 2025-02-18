@@ -30,7 +30,7 @@ func Upgrade(w http.ResponseWriter, r *http.Request) (*websocket.Conn, error) {
 }
 
 // Reading Messages
-func (c *Connection) ReadMEssage() ([]byte, error) {
+func (c *Connection) ReadMessage() ([]byte, error) {
 	_, message, err := c.conn.ReadMessage()
 	return message, err
 }

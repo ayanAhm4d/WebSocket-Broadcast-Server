@@ -44,7 +44,7 @@ func (s *Server) handleMessages(client *websocket.Connection) {
 	}()
 
 	for {
-		msg, err := client.ReadMEssage()
+		msg, err := client.ReadMessage()
 		if err != nil {
 			log.Printf("Read error: %v", err)
 			break
@@ -93,7 +93,7 @@ func (s *Server) Start() {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
-	s.shutdown(ctx)
+	s.shutdown()
 
 	if err := server.Shutdown(ctx); err != nil {
 		log.Printf("Shutdown error: %v", err)
@@ -137,7 +137,7 @@ func (s *Server) broadcastMessage(message []byte) {
 	}
 }
 
-func (s *Server) shutdown(ctx context.Context) {
+func (s *Server) shutdown() {
 	s.mutex.Lock()
 	defer s.mutex.Unlock()
 

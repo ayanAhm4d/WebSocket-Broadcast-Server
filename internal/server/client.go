@@ -12,6 +12,8 @@ import (
 	"sync"
 	"syscall"
 	"time"
+
+	ws "github.com/gorilla/websocket"
 )
 
 // Client stuct represents the websocket client
