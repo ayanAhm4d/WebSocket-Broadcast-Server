@@ -150,13 +150,7 @@ The application implements comprehensive error handling:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Testing
 
-To run the tests:
-
-```bash
-go test ./...
-```
 
 ## Built With
 
